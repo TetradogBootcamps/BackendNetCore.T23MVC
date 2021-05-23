@@ -1,5 +1,5 @@
 ﻿
-namespace NetCoreBootcampT23MVC
+namespace NetCoreBootcampT23MVC_EX1
 {
     partial class Form1
     {

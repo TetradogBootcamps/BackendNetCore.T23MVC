@@ -1,4 +1,4 @@
-﻿using NetCoreBootcampT23MVC_EX1;
+﻿
 using System;
 
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NetCoreBootcampT23MVC
+namespace NetCoreBootcampT23MVC_EX1
 {
     public partial class Form1 : Form
     {
@@ -69,7 +69,7 @@ namespace NetCoreBootcampT23MVC
             //miro si el visor tiene datos pendientes de actualizarse
             if (!visorEditorCreadorCliente.HasDataToUpdate() || DeseaPerderInformacion())
             {
-                visorEditorCreadorCliente.Cliente = new NetCoreBootcampT23MVC_EX1.Cliente();
+                visorEditorCreadorCliente.Cliente = new Cliente();
                 visorEditorCreadorCliente.Refresh();
             }
            
