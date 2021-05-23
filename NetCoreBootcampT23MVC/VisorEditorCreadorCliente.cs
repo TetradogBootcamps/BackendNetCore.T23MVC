@@ -155,7 +155,7 @@ namespace NetCoreBootcampT23MVC_EX1
                     if (!ControlEmpty|| totalEmpty < TOTAL)
                     {
                         if (Updated != null)
-                        Updated(this, new EventArgs());
+                         Updated(this, new EventArgs());
                     }
                     else
                     {
