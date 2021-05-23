@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreBootcampT23MVC_EX1", "NetCoreBootcampT23MVC\NetCoreBootcampT23MVC_EX1.csproj", "{D3AE5496-228C-4310-9CF3-983A7BCA73FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3AE5496-228C-4310-9CF3-983A7BCA73FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3AE5496-228C-4310-9CF3-983A7BCA73FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3AE5496-228C-4310-9CF3-983A7BCA73FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3AE5496-228C-4310-9CF3-983A7BCA73FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DAA3AB0-0436-46EB-89A9-FF344CEBFA29}
+	EndGlobalSection
+EndGlobal
