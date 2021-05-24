@@ -86,9 +86,9 @@ namespace NetCoreBootcampT23MVC_EX2
             this.lblCliente.AutoSize = true;
             this.lblCliente.Location = new System.Drawing.Point(13, 97);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(44, 15);
+            this.lblCliente.Size = new System.Drawing.Size(47, 15);
             this.lblCliente.TabIndex = 13;
-            this.lblCliente.Text = "Cliente";
+            this.lblCliente.Text = "Cliente:";
             // 
             // lblDirector
             // 
