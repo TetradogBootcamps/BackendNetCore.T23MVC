@@ -1,7 +1,7 @@
 ﻿
 namespace NetCoreBootcampT23MVC_EX1
 {
-    partial class Form1
+    partial class FrmClientes
     {
         /// <summary>
         ///  Required designer variable.
@@ -50,7 +50,7 @@ namespace NetCoreBootcampT23MVC_EX1
             this.btnAddCliente.Location = new System.Drawing.Point(2, 260);
             this.btnAddCliente.Name = "btnAddCliente";
             this.btnAddCliente.Size = new System.Drawing.Size(205, 23);
-            this.btnAddCliente.TabIndex = 1;
+            this.btnAddCliente.TabIndex = 12;
             this.btnAddCliente.Text = "Añadir Cliente";
             this.btnAddCliente.UseVisualStyleBackColor = true;
             this.btnAddCliente.Click += new System.EventHandler(this.btnAddCliente_Click);
@@ -72,7 +72,7 @@ namespace NetCoreBootcampT23MVC_EX1
             this.visorEditorCreadorCliente.Added += new System.EventHandler(this.visorEditorCreadorCliente_Added);
             this.visorEditorCreadorCliente.Updated += new System.EventHandler(this.visorEditorCreadorCliente_Updated);
             // 
-            // Form1
+            // FrmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +82,7 @@ namespace NetCoreBootcampT23MVC_EX1
             this.Controls.Add(this.lstClientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FrmClientes";
             this.Text = "Exercici 1 T23 MVC";
             this.ResumeLayout(false);
 

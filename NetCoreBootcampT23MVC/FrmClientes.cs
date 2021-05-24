@@ -12,16 +12,16 @@ using System.Windows.Forms;
 
 namespace NetCoreBootcampT23MVC_EX1
 {
-    public partial class Form1 : Form
+    public partial class FrmClientes : Form
     {
         static int IdGen = 0;
-        public Form1()
+        public FrmClientes()
         {
             InitializeComponent();
             Clientes = new List<Cliente>();
 
         }
-        List<Cliente> Clientes { get; set; }
+        public List<Cliente> Clientes { get; set; }
 
         private void visorEditorCreadorCliente_Updated(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace NetCoreBootcampT23MVC_EX1
 
         }
 
-        private void UpdateList()
+        public void UpdateList()
         {
             lstClientes.SelectedIndexChanged -= lstClientes_SelectedIndexChanged;
 

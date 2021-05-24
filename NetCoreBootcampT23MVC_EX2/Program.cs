@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace NetCoreBootcampT23MVC_EX1
+namespace NetCoreBootcampT23MVC_EX2
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace NetCoreBootcampT23MVC_EX1
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmClientes());
+            Application.Run(new Form1());
         }
     }
 }

@@ -84,7 +84,7 @@ namespace NetCoreBootcampT23MVC_EX1
             this.dtpkFecha.Location = new System.Drawing.Point(81, 211);
             this.dtpkFecha.Name = "dtpkFecha";
             this.dtpkFecha.Size = new System.Drawing.Size(236, 23);
-            this.dtpkFecha.TabIndex = 4;
+            this.dtpkFecha.TabIndex = 5;
             // 
             // lblFecha
             // 
@@ -120,14 +120,14 @@ namespace NetCoreBootcampT23MVC_EX1
             this.txtNombre.Location = new System.Drawing.Point(81, 8);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(236, 23);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtApellidos
             // 
             this.txtApellidos.Location = new System.Drawing.Point(81, 54);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(236, 23);
-            this.txtApellidos.TabIndex = 9;
+            this.txtApellidos.TabIndex = 2;
             // 
             // txtDireccion
             // 
@@ -135,14 +135,14 @@ namespace NetCoreBootcampT23MVC_EX1
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(236, 41);
-            this.txtDireccion.TabIndex = 10;
+            this.txtDireccion.TabIndex = 3;
             // 
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(81, 163);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(236, 23);
-            this.txtDNI.TabIndex = 11;
+            this.txtDNI.TabIndex = 4;
             // 
             // VisorEditorCreadorCliente
             // 
