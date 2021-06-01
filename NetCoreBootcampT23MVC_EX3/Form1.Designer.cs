@@ -1,7 +1,7 @@
 ﻿
 namespace NetCoreBootcampT23MVC_EX3
 {
-    partial class Form1
+    partial class FrmMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,11 +29,12 @@ namespace NetCoreBootcampT23MVC_EX3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbCientificos = new System.Windows.Forms.TabPage();
             this.tbProyectos = new System.Windows.Forms.TabPage();
-            this.tbAsignadoAs = new System.Windows.Forms.TabPage();
             this.editorProyectos1 = new NetCoreBootcampT23MVC_EX3.Controls.EditorProyectos();
+            this.tbAsignadoAs = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tbProyectos.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +47,7 @@ namespace NetCoreBootcampT23MVC_EX3
             this.tabControl1.Location = new System.Drawing.Point(5, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(529, 372);
+            this.tabControl1.Size = new System.Drawing.Size(371, 286);
             this.tabControl1.TabIndex = 0;
             // 
             // tbCientificos
@@ -54,7 +55,7 @@ namespace NetCoreBootcampT23MVC_EX3
             this.tbCientificos.Location = new System.Drawing.Point(4, 24);
             this.tbCientificos.Name = "tbCientificos";
             this.tbCientificos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCientificos.Size = new System.Drawing.Size(785, 420);
+            this.tbCientificos.Size = new System.Drawing.Size(363, 258);
             this.tbCientificos.TabIndex = 0;
             this.tbCientificos.Text = "Cientificos";
             this.tbCientificos.UseVisualStyleBackColor = true;
@@ -65,19 +66,10 @@ namespace NetCoreBootcampT23MVC_EX3
             this.tbProyectos.Location = new System.Drawing.Point(4, 24);
             this.tbProyectos.Name = "tbProyectos";
             this.tbProyectos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbProyectos.Size = new System.Drawing.Size(521, 344);
+            this.tbProyectos.Size = new System.Drawing.Size(363, 258);
             this.tbProyectos.TabIndex = 1;
             this.tbProyectos.Text = "Proyectos";
             this.tbProyectos.UseVisualStyleBackColor = true;
-            // 
-            // tbAsignadoAs
-            // 
-            this.tbAsignadoAs.Location = new System.Drawing.Point(4, 24);
-            this.tbAsignadoAs.Name = "tbAsignadoAs";
-            this.tbAsignadoAs.Size = new System.Drawing.Size(785, 420);
-            this.tbAsignadoAs.TabIndex = 2;
-            this.tbAsignadoAs.Text = "Asignar A";
-            this.tbAsignadoAs.UseVisualStyleBackColor = true;
             // 
             // editorProyectos1
             // 
@@ -87,18 +79,27 @@ namespace NetCoreBootcampT23MVC_EX3
             this.editorProyectos1.Size = new System.Drawing.Size(523, 349);
             this.editorProyectos1.TabIndex = 0;
             // 
+            // tbAsignadoAs
+            // 
+            this.tbAsignadoAs.Location = new System.Drawing.Point(4, 24);
+            this.tbAsignadoAs.Name = "tbAsignadoAs";
+            this.tbAsignadoAs.Size = new System.Drawing.Size(363, 258);
+            this.tbAsignadoAs.TabIndex = 2;
+            this.tbAsignadoAs.Text = "Asignar A";
+            this.tbAsignadoAs.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 375);
+            this.ClientSize = new System.Drawing.Size(376, 288);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.RightToLeftLayout = true;
             this.Text = "Exercici 3 T23 MVC";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tbProyectos.ResumeLayout(false);
             this.ResumeLayout(false);

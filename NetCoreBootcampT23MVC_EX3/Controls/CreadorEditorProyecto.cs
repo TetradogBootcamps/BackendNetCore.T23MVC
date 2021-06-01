@@ -11,7 +11,7 @@ namespace NetCoreBootcampT23MVC_EX3
 {
     public partial class CreadorEditorProyecto : UserControl
     {
-        public static  bool ControlEmpty { get; set; }
+        public static bool ControlEmpty { get; set; }
 
 
         public event EventHandler Updated;
@@ -20,12 +20,16 @@ namespace NetCoreBootcampT23MVC_EX3
         public CreadorEditorProyecto()
         {
             InitializeComponent();
+
         }
         public Proyecto Proyecto { get; set; }
         public bool IsOnBD { get; set; }
 
         public override void Refresh()
         {
+            if (Equals(Proyecto, default))
+                Proyecto = new Proyecto();
+
             txtId.Text = Proyecto.Id;
             txtNombre.Text = Proyecto.Nombre;
             numHoras.Value = Proyecto.Horas;
@@ -91,7 +95,7 @@ namespace NetCoreBootcampT23MVC_EX3
 
                     if (IsOnBD)
                     {
-                        if(!ControlEmpty || totalEmpty == TOTAL)
+                        if (!ControlEmpty || totalEmpty == TOTAL)
                         {
                             if (Updated != null)
                             {
@@ -100,7 +104,7 @@ namespace NetCoreBootcampT23MVC_EX3
                         }
                         else
                         {
-                            MessageBox.Show("Se requieren campos con valores!","Atención",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                            MessageBox.Show("Se requieren campos con valores!", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else
@@ -136,14 +140,31 @@ namespace NetCoreBootcampT23MVC_EX3
                 {
                     Deleted(this, new EventArgs());
                 }
+                IsOnBD = false;
             }
-            else
-            {
-                Proyecto = new Proyecto();
-                Refresh();
-            }
-        }
 
+            Proyecto = new Proyecto();
+            Refresh();
+
+        }
+        public bool HasDataToUpdate()
+        {
+            bool hasDataToUpdate = !Equals(txtId.Text, Equals(Proyecto.Id, default) ? string.Empty : Proyecto.Id);
+
+            if (!hasDataToUpdate)
+            {
+                hasDataToUpdate = !Equals(txtNombre.Text, Equals(Proyecto.Nombre, default) ? string.Empty : Proyecto.Nombre);
+                if (!hasDataToUpdate)
+                {
+                    hasDataToUpdate = !Equals((int)numHoras.Value, Proyecto.Horas);
+
+                }
+            }
+
+
+
+            return hasDataToUpdate;
+        }
 
     }
 }

@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace NetCoreBootcampT23MVC_EX3
 {
-    public partial class Form1 : Form
+    public partial class FrmMain : Form
     {
-        public Form1()
+        public FrmMain()
         {
             InitializeComponent();
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            e.Cancel = editorProyectos1.HasDataToUpdate() && !MessageWhantToLoseData();
+        }
+        public static bool MessageWhantToLoseData()
+        {
+            return MessageBox.Show("Hay información por actualizar,¿ está seguro que quiere perderla?","Atención",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes;
         }
     }
 }
