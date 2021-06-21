@@ -1,9 +1,11 @@
-﻿using NetCoreBootcampT23MVC_EX3.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using NetCoreBootcampT23MVC_EX3.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -14,27 +16,33 @@ namespace NetCoreBootcampT23MVC_EX3.Controls
         public EditorProyectos()
         {
             InitializeComponent();
-            Proyectos = new List<Proyecto>();
+            Context = new Context();
             creadorEditorProyecto.Refresh();
+            UpdateList();
         }
-        public List<Proyecto> Proyectos { get; set; }
+       
+        public Context Context { get; set; }
+
 
         private void creadorEditorProyecto_Added(object sender, EventArgs e)
         {
             Proyecto proyecto = creadorEditorProyecto.Proyecto;
-            Proyectos.Add(proyecto);
+            Context.Proyectos.Add(proyecto);
+            Context.SaveChanges();
             UpdateList();
         }
 
         private void creadorEditorProyecto_Updated(object sender, EventArgs e)
         {
+            Context.SaveChanges();
             UpdateList();
         }
 
         private void creadorEditorProyecto_Deleted(object sender, EventArgs e)
         {
             Proyecto proyecto = creadorEditorProyecto.Proyecto;
-            Proyectos.Remove(proyecto);
+            Context.Proyectos.Remove(proyecto);
+            Context.SaveChanges();
             UpdateList();
         }
         void UpdateList()
@@ -44,8 +52,8 @@ namespace NetCoreBootcampT23MVC_EX3.Controls
 
             lstProyectos.Items.Clear();
 
-            for (int i = 0; i < Proyectos.Count; i++)
-                lstProyectos.Items.Add(Proyectos[i]);
+            foreach(var proyecto in Context.Proyectos)
+                lstProyectos.Items.Add(proyecto);
 
             if (!Equals(selected,default) && lstProyectos.Items.IndexOf(selected) >= 0)
                 lstProyectos.SelectedItem = selected;

@@ -18,13 +18,19 @@ namespace NetCoreBootcampT23MVC_EX1
         public FrmClientes()
         {
             InitializeComponent();
-            Clientes = new List<Cliente>();
+            Context = new Context();
+            UpdateList();
 
         }
-        public List<Cliente> Clientes { get; set; }
+        public Context Context { get; set; }
 
         private void visorEditorCreadorCliente_Updated(object sender, EventArgs e)
         {
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch { /*no actualizan nada y da error*/}
             UpdateList();
             //actualizo el cliente a la BD
         }
@@ -34,9 +40,10 @@ namespace NetCoreBootcampT23MVC_EX1
             Cliente cliente = visorEditorCreadorCliente.Cliente;
             //añado el cliente a la BD
             //de momento pongo el Id desde la app
-            cliente.Id = IdGen++;
+            //cliente.Id = IdGen++;
 
-            Clientes.Add(cliente);
+            Context.Clientes.Add(cliente);
+            Context.SaveChanges();
             UpdateList();
 
 
@@ -45,13 +52,15 @@ namespace NetCoreBootcampT23MVC_EX1
 
         public void UpdateList()
         {
+            Cliente client;
             lstClientes.SelectedIndexChanged -= lstClientes_SelectedIndexChanged;
 
             lstClientes.DataSource = default;
             lstClientes.Items.Clear();
 
-            lstClientes.DataSource = Clientes;
-            if (Clientes.Contains(visorEditorCreadorCliente.Cliente))
+            lstClientes.DataSource = Context.Clientes.ToList();
+            client = Context.Clientes.Find(visorEditorCreadorCliente.Cliente.Id);
+            if (!Equals(client,default(Cliente)))
                 lstClientes.SelectedItem = visorEditorCreadorCliente.Cliente;
 
             lstClientes.SelectedIndexChanged += lstClientes_SelectedIndexChanged;
@@ -59,7 +68,8 @@ namespace NetCoreBootcampT23MVC_EX1
 
         private void visorEditorCreadorCliente_Deleted(object sender, EventArgs e)
         {
-            Clientes.Remove(visorEditorCreadorCliente.Cliente);
+            Context.Clientes.Remove(visorEditorCreadorCliente.Cliente);
+            Context.SaveChanges();
             UpdateList();
             //elimino el cliente de la BD
         }
@@ -99,5 +109,6 @@ namespace NetCoreBootcampT23MVC_EX1
                 }
             }
         }
+
     }
 }

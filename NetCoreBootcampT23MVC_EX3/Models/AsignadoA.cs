@@ -13,7 +13,9 @@ namespace NetCoreBootcampT23MVC_EX3.Models
             Proyecto = proyecto;
         }
 
+        public string CientificoId { get; set; }
         public Cientifico Cientifico { get; set; }
+        public string ProyectoId { get; set; }
         public Proyecto Proyecto { get; set; }
     }
 }

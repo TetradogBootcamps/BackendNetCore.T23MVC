@@ -33,7 +33,7 @@ namespace NetCoreBootcampT23MVC_EX3
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbCientificos = new System.Windows.Forms.TabPage();
             this.tbProyectos = new System.Windows.Forms.TabPage();
-            this.editorProyectos1 = new NetCoreBootcampT23MVC_EX3.Controls.EditorProyectos();
+            this.editorProyectos = new NetCoreBootcampT23MVC_EX3.Controls.EditorProyectos();
             this.tbAsignadoAs = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tbProyectos.SuspendLayout();
@@ -62,7 +62,7 @@ namespace NetCoreBootcampT23MVC_EX3
             // 
             // tbProyectos
             // 
-            this.tbProyectos.Controls.Add(this.editorProyectos1);
+            this.tbProyectos.Controls.Add(this.editorProyectos);
             this.tbProyectos.Location = new System.Drawing.Point(4, 24);
             this.tbProyectos.Name = "tbProyectos";
             this.tbProyectos.Padding = new System.Windows.Forms.Padding(3);
@@ -73,11 +73,11 @@ namespace NetCoreBootcampT23MVC_EX3
             // 
             // editorProyectos1
             // 
-            this.editorProyectos1.BackColor = System.Drawing.Color.Transparent;
-            this.editorProyectos1.Location = new System.Drawing.Point(0, 0);
-            this.editorProyectos1.Name = "editorProyectos1";
-            this.editorProyectos1.Size = new System.Drawing.Size(523, 349);
-            this.editorProyectos1.TabIndex = 0;
+            this.editorProyectos.BackColor = System.Drawing.Color.Transparent;
+            this.editorProyectos.Location = new System.Drawing.Point(0, 0);
+            this.editorProyectos.Name = "editorProyectos1";
+            this.editorProyectos.Size = new System.Drawing.Size(523, 349);
+            this.editorProyectos.TabIndex = 0;
             // 
             // tbAsignadoAs
             // 
@@ -111,7 +111,7 @@ namespace NetCoreBootcampT23MVC_EX3
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tbCientificos;
         private System.Windows.Forms.TabPage tbProyectos;
-        private Controls.EditorProyectos editorProyectos1;
+        private Controls.EditorProyectos editorProyectos;
         private System.Windows.Forms.TabPage tbAsignadoAs;
     }
 }

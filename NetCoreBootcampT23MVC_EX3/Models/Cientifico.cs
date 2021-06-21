@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace NetCoreBootcampT23MVC_EX3.Models
@@ -12,7 +13,7 @@ namespace NetCoreBootcampT23MVC_EX3.Models
             DNI = dNI;
             NombreCompleto = nombreCompleto;
         }
-
+       [Key]
         public string DNI { get; set; }
         public string NombreCompleto { get; set; }
         public override string ToString()

@@ -143,6 +143,7 @@ namespace NetCoreBootcampT23MVC_EX1
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(236, 23);
             this.txtDNI.TabIndex = 4;
+            this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // VisorEditorCreadorCliente
             // 

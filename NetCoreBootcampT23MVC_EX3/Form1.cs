@@ -12,6 +12,7 @@ namespace NetCoreBootcampT23MVC_EX3
 {
     public partial class FrmMain : Form
     {
+
         public FrmMain()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace NetCoreBootcampT23MVC_EX3
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = editorProyectos1.HasDataToUpdate() && !MessageWhantToLoseData();
+            e.Cancel = editorProyectos.HasDataToUpdate() && !MessageWhantToLoseData();
         }
         public static bool MessageWhantToLoseData()
         {

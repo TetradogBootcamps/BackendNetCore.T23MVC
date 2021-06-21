@@ -13,21 +13,18 @@ namespace NetCoreBootcampT23MVC_EX2
 {
     public partial class Form1 : Form
     {
-        static int IdGen = 0;
         public Form1()
         {
             InitializeComponent();
-            Videos = new List<Video>();
-
+            UpdateList();
         }
-        List<Cliente> Clientes => visorEditorCreadorVideo.Clientes;
-        List<Video> Videos { get; set; }
+        Context Context => visorEditorCreadorVideo.Context;
 
         private void btnAddClientes_Click(object sender, EventArgs e)
         {
 
             FrmClientes frmClientes = new FrmClientes();
-            frmClientes.Clientes = Clientes;
+            frmClientes.Context = Context;
             frmClientes.UpdateList();
             frmClientes.ShowDialog();
             //actualizo los CMB de clientes
@@ -38,8 +35,8 @@ namespace NetCoreBootcampT23MVC_EX2
         private void visorEditorCreadorVideo1_Added(object sender, EventArgs e)
         {
             Video video = visorEditorCreadorVideo.Video;
-            video.Id = IdGen++;
-            Videos.Add(video);
+            Context.Videos.Add(video);
+            Context.SaveChanges();
             UpdateList();
         }
 
@@ -49,19 +46,21 @@ namespace NetCoreBootcampT23MVC_EX2
             lstVideos.SelectedIndexChanged -= lstVideos_SelectedIndexChanged;
 
             lstVideos.Items.Clear();
-            for (int i = 0; i < Videos.Count; i++)
-                lstVideos.Items.Add(Videos[i]);
+            foreach(Video video in Context.Videos)
+                lstVideos.Items.Add(video);
 
-            if (!Equals(videoAux, default))
-            {
-                lstVideos.SelectedIndex = Videos.IndexOf(videoAux);
-            }
 
             lstVideos.SelectedIndexChanged += lstVideos_SelectedIndexChanged;
         }
 
         private void visorEditorCreadorVideo1_Updated(object sender, EventArgs e)
         {
+            try
+            {
+
+                Context.SaveChanges();
+            }
+            catch { }
             UpdateList();
         }
 
@@ -69,23 +68,26 @@ namespace NetCoreBootcampT23MVC_EX2
         {
             if (visorEditorCreadorVideo.Video.Id.HasValue)
             {
-                Videos.Remove(visorEditorCreadorVideo.Video);
+                Context.Videos.Remove(visorEditorCreadorVideo.Video);
+                Context.SaveChanges();
                 UpdateList();
             }
         }
 
         private void lstVideos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstVideos.SelectedIndex >= 0 && !ReferenceEquals(Videos[lstVideos.SelectedIndex], visorEditorCreadorVideo.Video))
+            IList<Video> videos = Context.Videos.ToList();
+
+            if (lstVideos.SelectedIndex >= 0 && !ReferenceEquals(videos[lstVideos.SelectedIndex], visorEditorCreadorVideo.Video))
             {
                 if (!visorEditorCreadorVideo.HasDataToUpdate() || DeseaPerderInformacion())
                 {
-                    visorEditorCreadorVideo.Video = Videos[lstVideos.SelectedIndex];
+                    visorEditorCreadorVideo.Video = videos[lstVideos.SelectedIndex];
                     visorEditorCreadorVideo.Refresh();
                 }
                 else
                 {
-                    lstVideos.SelectedIndex = Videos.IndexOf(visorEditorCreadorVideo.Video);
+                    lstVideos.SelectedIndex = videos.IndexOf(visorEditorCreadorVideo.Video);
                 }
             }
         }

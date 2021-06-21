@@ -12,6 +12,7 @@ namespace NetCoreBootcampT23MVC_EX2
         public int? Id { get; set; }
         public string Title { get; set; }
         public string Director { get; set; }
+
         public Cliente Cliente { get; set; }
 
         public override string ToString()

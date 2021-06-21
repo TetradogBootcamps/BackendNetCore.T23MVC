@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -19,11 +20,11 @@ namespace NetCoreBootcampT23MVC_EX2
         public VisorEditorCreadorVideo()
         {
             InitializeComponent();
-            Clientes = new List<Cliente>();
+            Context = new Context();
             Reset();
         }
         public Video Video { get; set; }
-        public List<Cliente> Clientes { get; set; }
+        public Context Context { get; set; }
 
         public override void Refresh()
         {
@@ -35,7 +36,7 @@ namespace NetCoreBootcampT23MVC_EX2
                 txtDirector.Text = Video.Director;
 
                 if (!Equals(Video.Cliente, default))
-                     cmbClientes.SelectedIndex = Clientes.IndexOf(Video.Cliente);
+                     cmbClientes.SelectedIndex = Context.Clientes.ToList().IndexOf(Video.Cliente);
                 else cmbClientes.SelectedIndex = -1;
                 SetButtonsVideoWithId();
             }
@@ -54,7 +55,7 @@ namespace NetCoreBootcampT23MVC_EX2
         public void RefreshCmb()
         {
             cmbClientes.Items.Clear();
-            cmbClientes.Items.AddRange(Clientes.ToArray());
+            cmbClientes.Items.AddRange(Context.Clientes.ToArray());
         }
 
         private void SetButtonsVideoWithId()
@@ -107,7 +108,7 @@ namespace NetCoreBootcampT23MVC_EX2
                 }
                 else
                 {
-                    Video.Cliente = Clientes[cmbClientes.SelectedIndex];
+                    Video.Cliente = Context.Clientes.ToList()[cmbClientes.SelectedIndex];
                 }
                 if (!error)
                 {
@@ -161,7 +162,7 @@ namespace NetCoreBootcampT23MVC_EX2
                 hasDataToUpdate = !Equals(txtDirector.Text, Equals(Video.Director, default) ? string.Empty : Video.Director);
                 if (!hasDataToUpdate)
                 {
-                    hasDataToUpdate = !Equals(cmbClientes.SelectedIndex, Equals(Video.Cliente, default) ? -1: Clientes.IndexOf(Video.Cliente));
+                    hasDataToUpdate = !Equals(cmbClientes.SelectedIndex, Equals(Video.Cliente, default) ? -1: Context.Clientes.ToList().IndexOf(Video.Cliente));
                  
                 }
             }

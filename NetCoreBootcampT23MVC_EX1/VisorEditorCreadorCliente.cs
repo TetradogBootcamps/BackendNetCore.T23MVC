@@ -135,11 +135,11 @@ namespace NetCoreBootcampT23MVC_EX1
                         {
                             if (!Equals(Default, dtpkFecha.Value))
                             {
-                                Cliente.Fecha = dtpkFecha.Value;
+                                Cliente.Fecha = dtpkFecha.Value.Date;
                             }
                             else
                             {
-                                Cliente.Fecha = default;
+                                Cliente.Fecha = DateTime.UtcNow.Date;
                                 totalEmpty++;
                             }
                         }
@@ -228,6 +228,13 @@ namespace NetCoreBootcampT23MVC_EX1
 
 
             return hasDataToUpdate;
+        }
+
+
+
+        private void txtDNI_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar);
         }
     }
 }
