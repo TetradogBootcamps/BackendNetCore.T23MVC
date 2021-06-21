@@ -37,7 +37,7 @@ namespace NetCoreBootcampT23MVC_EX3.Controls
             // creadorEditorProyecto
             // 
             this.creadorEditorProyecto.IsOnBD = false;
-            this.creadorEditorProyecto.Location = new System.Drawing.Point(191, 49);
+            this.creadorEditorProyecto.Location = new System.Drawing.Point(155, 43);
             this.creadorEditorProyecto.Name = "creadorEditorProyecto";
             this.creadorEditorProyecto.Proyecto = null;
             this.creadorEditorProyecto.Size = new System.Drawing.Size(163, 150);

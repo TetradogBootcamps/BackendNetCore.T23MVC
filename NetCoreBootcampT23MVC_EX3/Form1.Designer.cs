@@ -29,13 +29,16 @@ namespace NetCoreBootcampT23MVC_EX3
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
+            NetCoreBootcampT23MVC_EX3.Context context1 = new NetCoreBootcampT23MVC_EX3.Context();
+            NetCoreBootcampT23MVC_EX3.Context context2 = new NetCoreBootcampT23MVC_EX3.Context();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbCientificos = new System.Windows.Forms.TabPage();
+            this.editorCientificos = new NetCoreBootcampT23MVC_EX3.Controls.EditorCientificos();
             this.tbProyectos = new System.Windows.Forms.TabPage();
             this.editorProyectos = new NetCoreBootcampT23MVC_EX3.Controls.EditorProyectos();
             this.tbAsignadoAs = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
+            this.tbCientificos.SuspendLayout();
             this.tbProyectos.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,18 +50,27 @@ namespace NetCoreBootcampT23MVC_EX3
             this.tabControl1.Location = new System.Drawing.Point(5, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(371, 286);
+            this.tabControl1.Size = new System.Drawing.Size(393, 286);
             this.tabControl1.TabIndex = 0;
             // 
             // tbCientificos
             // 
+            this.tbCientificos.Controls.Add(this.editorCientificos);
             this.tbCientificos.Location = new System.Drawing.Point(4, 24);
             this.tbCientificos.Name = "tbCientificos";
             this.tbCientificos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCientificos.Size = new System.Drawing.Size(363, 258);
+            this.tbCientificos.Size = new System.Drawing.Size(385, 258);
             this.tbCientificos.TabIndex = 0;
             this.tbCientificos.Text = "Cientificos";
             this.tbCientificos.UseVisualStyleBackColor = true;
+            // 
+            // editorCientificos1
+            // 
+            this.editorCientificos.Context = context1;
+            this.editorCientificos.Location = new System.Drawing.Point(-4, -1);
+            this.editorCientificos.Name = "editorCientificos1";
+            this.editorCientificos.Size = new System.Drawing.Size(397, 263);
+            this.editorCientificos.TabIndex = 0;
             // 
             // tbProyectos
             // 
@@ -66,16 +78,17 @@ namespace NetCoreBootcampT23MVC_EX3
             this.tbProyectos.Location = new System.Drawing.Point(4, 24);
             this.tbProyectos.Name = "tbProyectos";
             this.tbProyectos.Padding = new System.Windows.Forms.Padding(3);
-            this.tbProyectos.Size = new System.Drawing.Size(363, 258);
+            this.tbProyectos.Size = new System.Drawing.Size(385, 258);
             this.tbProyectos.TabIndex = 1;
             this.tbProyectos.Text = "Proyectos";
             this.tbProyectos.UseVisualStyleBackColor = true;
             // 
-            // editorProyectos1
+            // editorProyectos
             // 
             this.editorProyectos.BackColor = System.Drawing.Color.Transparent;
+            this.editorProyectos.Context = context2;
             this.editorProyectos.Location = new System.Drawing.Point(0, 0);
-            this.editorProyectos.Name = "editorProyectos1";
+            this.editorProyectos.Name = "editorProyectos";
             this.editorProyectos.Size = new System.Drawing.Size(523, 349);
             this.editorProyectos.TabIndex = 0;
             // 
@@ -88,19 +101,20 @@ namespace NetCoreBootcampT23MVC_EX3
             this.tbAsignadoAs.Text = "Asignar A";
             this.tbAsignadoAs.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 288);
+            this.ClientSize = new System.Drawing.Size(397, 290);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "FrmMain";
             this.RightToLeftLayout = true;
             this.Text = "Exercici 3 T23 MVC";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
+            this.tbCientificos.ResumeLayout(false);
             this.tbProyectos.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -113,6 +127,7 @@ namespace NetCoreBootcampT23MVC_EX3
         private System.Windows.Forms.TabPage tbProyectos;
         private Controls.EditorProyectos editorProyectos;
         private System.Windows.Forms.TabPage tbAsignadoAs;
+        private Controls.EditorCientificos editorCientificos;
     }
 }
 

@@ -7,6 +7,8 @@ namespace NetCoreBootcampT23MVC_EX3.Models
 {
     public class Cientifico
     {
+        public const int DNIMAXLENGHT = 8;
+        public const int NOMBRECOMPLETOMAXLENGHT = 50;
         public Cientifico() { }
         public Cientifico(string dNI, string nombreCompleto)
         {
@@ -19,6 +21,11 @@ namespace NetCoreBootcampT23MVC_EX3.Models
         public override string ToString()
         {
             return string.IsNullOrEmpty(NombreCompleto) ? "Empty" : NombreCompleto;
+        }
+        public override bool Equals(object obj)
+        {
+            Cientifico other = obj as Cientifico;
+            return !Equals(other, default(Cientifico)) && Equals(DNI, other.DNI);
         }
     }
 }

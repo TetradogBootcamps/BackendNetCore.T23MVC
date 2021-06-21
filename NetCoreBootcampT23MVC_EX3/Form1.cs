@@ -21,7 +21,7 @@ namespace NetCoreBootcampT23MVC_EX3
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = editorProyectos.HasDataToUpdate() && !MessageWhantToLoseData();
+            e.Cancel = (editorCientificos.HasDataToUpdate() || editorProyectos.HasDataToUpdate()) && !MessageWhantToLoseData();
         }
         public static bool MessageWhantToLoseData()
         {
