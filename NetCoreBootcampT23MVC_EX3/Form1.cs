@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NetCoreBootcampT23MVC_EX3.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,16 @@ namespace NetCoreBootcampT23MVC_EX3
         public static bool MessageWhantToLoseData()
         {
             return MessageBox.Show("Hay información por actualizar,¿ está seguro que quiere perderla?","Atención",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes;
+        }
+
+        private void tbMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            const int INDEXASIGNADOA = 2;
+
+            if (tbMain.SelectedIndex==INDEXASIGNADOA)
+            {
+                asignarProyectos1.Refresh();
+            }
         }
     }
 }

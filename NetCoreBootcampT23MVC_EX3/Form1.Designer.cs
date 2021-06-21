@@ -29,29 +29,33 @@ namespace NetCoreBootcampT23MVC_EX3
         /// </summary>
         private void InitializeComponent()
         {
-            NetCoreBootcampT23MVC_EX3.Context context1 = new NetCoreBootcampT23MVC_EX3.Context();
-            NetCoreBootcampT23MVC_EX3.Context context2 = new NetCoreBootcampT23MVC_EX3.Context();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            NetCoreBootcampT23MVC_EX3.Context context4 = new NetCoreBootcampT23MVC_EX3.Context();
+            NetCoreBootcampT23MVC_EX3.Context context5 = new NetCoreBootcampT23MVC_EX3.Context();
+            NetCoreBootcampT23MVC_EX3.Context context6 = new NetCoreBootcampT23MVC_EX3.Context();
+            this.tbMain = new System.Windows.Forms.TabControl();
             this.tbCientificos = new System.Windows.Forms.TabPage();
             this.editorCientificos = new NetCoreBootcampT23MVC_EX3.Controls.EditorCientificos();
             this.tbProyectos = new System.Windows.Forms.TabPage();
             this.editorProyectos = new NetCoreBootcampT23MVC_EX3.Controls.EditorProyectos();
             this.tbAsignadoAs = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.asignarProyectos1 = new NetCoreBootcampT23MVC_EX3.Controls.AsignarProyectos();
+            this.tbMain.SuspendLayout();
             this.tbCientificos.SuspendLayout();
             this.tbProyectos.SuspendLayout();
+            this.tbAsignadoAs.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tbMain
             // 
-            this.tabControl1.Controls.Add(this.tbCientificos);
-            this.tabControl1.Controls.Add(this.tbProyectos);
-            this.tabControl1.Controls.Add(this.tbAsignadoAs);
-            this.tabControl1.Location = new System.Drawing.Point(5, 4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(393, 286);
-            this.tabControl1.TabIndex = 0;
+            this.tbMain.Controls.Add(this.tbCientificos);
+            this.tbMain.Controls.Add(this.tbProyectos);
+            this.tbMain.Controls.Add(this.tbAsignadoAs);
+            this.tbMain.Location = new System.Drawing.Point(5, 4);
+            this.tbMain.Name = "tbMain";
+            this.tbMain.SelectedIndex = 0;
+            this.tbMain.Size = new System.Drawing.Size(393, 286);
+            this.tbMain.TabIndex = 0;
+            this.tbMain.SelectedIndexChanged += new System.EventHandler(this.tbMain_SelectedIndexChanged);
             // 
             // tbCientificos
             // 
@@ -64,11 +68,11 @@ namespace NetCoreBootcampT23MVC_EX3
             this.tbCientificos.Text = "Cientificos";
             this.tbCientificos.UseVisualStyleBackColor = true;
             // 
-            // editorCientificos1
+            // editorCientificos
             // 
-            this.editorCientificos.Context = context1;
+            this.editorCientificos.Context = context4;
             this.editorCientificos.Location = new System.Drawing.Point(-4, -1);
-            this.editorCientificos.Name = "editorCientificos1";
+            this.editorCientificos.Name = "editorCientificos";
             this.editorCientificos.Size = new System.Drawing.Size(397, 263);
             this.editorCientificos.TabIndex = 0;
             // 
@@ -86,7 +90,7 @@ namespace NetCoreBootcampT23MVC_EX3
             // editorProyectos
             // 
             this.editorProyectos.BackColor = System.Drawing.Color.Transparent;
-            this.editorProyectos.Context = context2;
+            this.editorProyectos.Context = context5;
             this.editorProyectos.Location = new System.Drawing.Point(0, 0);
             this.editorProyectos.Name = "editorProyectos";
             this.editorProyectos.Size = new System.Drawing.Size(523, 349);
@@ -94,40 +98,51 @@ namespace NetCoreBootcampT23MVC_EX3
             // 
             // tbAsignadoAs
             // 
+            this.tbAsignadoAs.Controls.Add(this.asignarProyectos1);
             this.tbAsignadoAs.Location = new System.Drawing.Point(4, 24);
             this.tbAsignadoAs.Name = "tbAsignadoAs";
-            this.tbAsignadoAs.Size = new System.Drawing.Size(363, 258);
+            this.tbAsignadoAs.Size = new System.Drawing.Size(385, 258);
             this.tbAsignadoAs.TabIndex = 2;
             this.tbAsignadoAs.Text = "Asignar A";
             this.tbAsignadoAs.UseVisualStyleBackColor = true;
+            // 
+            // asignarProyectos1
+            // 
+            this.asignarProyectos1.Context = context6;
+            this.asignarProyectos1.Location = new System.Drawing.Point(-4, -1);
+            this.asignarProyectos1.Name = "asignarProyectos1";
+            this.asignarProyectos1.Size = new System.Drawing.Size(392, 263);
+            this.asignarProyectos1.TabIndex = 0;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 290);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tbMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.RightToLeftLayout = true;
             this.Text = "Exercici 3 T23 MVC";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.tabControl1.ResumeLayout(false);
+            this.tbMain.ResumeLayout(false);
             this.tbCientificos.ResumeLayout(false);
             this.tbProyectos.ResumeLayout(false);
+            this.tbAsignadoAs.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tbMain;
         private System.Windows.Forms.TabPage tbCientificos;
         private System.Windows.Forms.TabPage tbProyectos;
         private Controls.EditorProyectos editorProyectos;
         private System.Windows.Forms.TabPage tbAsignadoAs;
         private Controls.EditorCientificos editorCientificos;
+        private Controls.AsignarProyectos asignarProyectos1;
     }
 }
 
